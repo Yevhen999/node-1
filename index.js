@@ -7,8 +7,6 @@ const {
 
 const argv = require("yargs").argv;
 
-// console.log(first)
-
 const invokeAction = async ({ action, id, name, email, phone }) => {
   switch (action) {
     case "list":
