@@ -2,16 +2,16 @@
 
 # Get and display the entire list of contacts in the form of a table (console.table)
 
-https://gyazo.com/19a993bd86f89616fa8e0cc2e2d68f4d
+https://gyazo.com/f842eff7e4feb30d02366198671fc2e6
 
 # Get contact by id
 
-https://gyazo.com/5a0050232ea868ea3d3fcb5b804bb2e8
+https://gyazo.com/325557e50351934917498291fa62668e
 
 # Add the contact
 
-https://gyazo.com/ff141b91b87651acc2d0f9aed1e3e1df
+https://gyazo.com/b2c41cc22fa52975c867f2587aab554d
 
 # Delete the contact
 
-https://gyazo.com/ac3284e479164cb1af8ee381ba9b4fc6
+https://gyazo.com/845671091f3abb4a8533ac447f40164e

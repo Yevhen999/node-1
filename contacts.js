@@ -10,26 +10,32 @@ const listContacts = async () => {
 };
 
 const getContactById = async (contactId) => {
+  const contactById = String(contactId);
   const contacts = await listContacts();
-  const contact = await contacts.find(({ id }) => id == contactId);
+  const contact = await contacts.find(({ id }) => id === contactById);
   return contact;
 };
 
 const removeContact = async (contactId) => {
+  const contactById = String(contactId);
   const contacts = await listContacts();
-  const newContacts = await contacts.filter(({ id }) => id != contactId);
-  await fs.writeFile(contactsPath, JSON.stringify(newContacts, null, 2));
-  return newContacts;
+  const index = contacts.findIndex((contact) => contact.id === contactById);
+
+  if (index === -1) {
+    return null;
+  }
+
+  const [result] = contacts.splice(index, 1);
+  await fs.writeFile(contactsPath, JSON.stringify(contacts, null, 2));
+  return result;
 };
 
-const addContact = async (name, email, phone) => {
+const addContact = async (data) => {
   const currentContacts = await listContacts();
 
   const newContact = {
     id: nanoid(5),
-    name,
-    email,
-    phone,
+    ...data,
   };
   currentContacts.push(newContact);
   await fs.writeFile(contactsPath, JSON.stringify(currentContacts, null, 2));
